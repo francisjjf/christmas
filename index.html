@@ -4,7 +4,7 @@
 
 </head>
     <meta charset="UTF-8">
-	<title>Jiang & Jiang</title>
+	<title>Christmas</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/jjcss.css">
 
@@ -71,7 +71,7 @@
         <div class="carousel-inner" style="width: 100%;height: 100%;" id="background">
 	
 		    <div class="item active" >
-				<img style="width: 100%;height: 100%;" src="./img/end.PNG">
+				<img style="width: 100%;height: 100%;" src="./img/end.jpg">
             </div>
 <!--
             <div class="item" >
@@ -87,7 +87,7 @@
 			    <div class="modal-content">
 					<div class="modal-header">
 						<div>
-							<h1 class="text-center modal-header-1">Time After Jiang Meets Jiang</h1>
+							<h1 class="text-center modal-header-1"></h1>
 							<h3 class="text-center modal-header-2"><div id="elapseClock"></div></h3>
 						</div>
 
@@ -139,30 +139,47 @@
 			ctx.clearRect(0, 0, W, H);
 			
 			ctx.fillStyle = "rgba(255, 255, 255, 1)";
-			ctx.beginPath();
 			for(var i = 0; i < mp; i++)
 			{
-				var p = particles[i];
-				ctx.moveTo(p.x, p.y);
-				//ctx.arc(p.x, p.y, p.r, 0, Math.PI*2, true);
-				a=p.x;b=p.y;
-				ctx.moveTo(a,b);//从点(160,160)开始 
-				ctx.lineTo(a-5,b+10); 
-				ctx.lineTo(a-1,b+10); 
-				ctx.lineTo(a-8,b+20); 
-				ctx.lineTo(a-1,b+20);
-				ctx.lineTo(a-1,b+30);
-				ctx.lineTo(a+1,b+30);
-				ctx.lineTo(a+1,b+20);
-				ctx.lineTo(a+8,b+20);
-				ctx.lineTo(a+1,b+10);
-				ctx.lineTo(a+5,b+10);
-				ctx.closePath(); 
-				ctx.fillStyle="green";
-				ctx.fill()				
-				
+				if(i%2 == 0)
+				{
+					ctx.beginPath();
+
+					var p = particles[i];
+					ctx.moveTo(p.x, p.y);
+					ctx.arc(p.x, p.y, p.r, 0, Math.PI*2, true);
+
+					ctx.fillStyle="white";
+					ctx.fill();
+					ctx.closePath(); 
+
+				}
+				else
+				{
+					ctx.beginPath();
+
+					var p = particles[i];
+					ctx.moveTo(p.x, p.y);
+					//ctx.arc(p.x, p.y, p.r, 0, Math.PI*2, true);
+					a=p.x;b=p.y;
+					ctx.moveTo(a,b);//从点(160,160)开始 
+					ctx.lineTo(a-5,b+10); 
+					ctx.lineTo(a-1,b+10); 
+					ctx.lineTo(a-8,b+20); 
+					ctx.lineTo(a-1,b+20);
+					ctx.lineTo(a-1,b+30);
+					ctx.lineTo(a+1,b+30);
+					ctx.lineTo(a+1,b+20);
+					ctx.lineTo(a+8,b+20);
+					ctx.lineTo(a+1,b+10);
+					ctx.lineTo(a+5,b+10);
+					ctx.fillStyle="green";
+					ctx.fill();
+					ctx.closePath(); 
+
+				}
+
 			}
-			ctx.fill();
 			update();
 		}
 		
